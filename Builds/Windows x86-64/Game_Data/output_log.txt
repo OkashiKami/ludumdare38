@@ -1,0 +1,39 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [aticfx64.dll 8.17.10.1129]
+    Renderer: ATI Radeon 3000 Graphics
+    Vendor:   ATI
+    VRAM:     1657 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=0 NULL=0 RESZ=1 SlowINTZ=1 ATOC=0 BC4=1 BC5=1
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.240 seconds
+Platform assembly: D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\ludumdare38\Builds\Windows x86-64\Game_Data\Managed\System.dll (this message is harmless)
+OnLevelWasLoaded was found on MobSpawner
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+ 
+(Filename:  Line: 382)
+
+OnLevelWasLoaded was found on CBL
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+ 
+(Filename:  Line: 382)
+
+desktop: 1600x1024 59Hz; virtual: 3200x1024 at -1600,0
+<RI> Initializing input.
+<RI> Input initialized.
