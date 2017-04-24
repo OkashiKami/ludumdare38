@@ -273,7 +273,7 @@ public class ThirdPersonCamera : MonoBehaviour
 		float leftY = Input.GetAxis("Vertical");
 		float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
 		float mouseWheelScaled = mouseWheel * mouseWheelSensitivity;
-		float leftTrigger = Input.GetAxis("Target");
+        float leftTrigger = 1; //Input.GetAxis("Target");
 		bool bButtonPressed = Input.GetButton("ExitFPV");
 		bool qKeyDown = Input.GetKey(KeyCode.Q);
 		bool eKeyDown = Input.GetKey(KeyCode.E);
@@ -444,7 +444,7 @@ public class ThirdPersonCamera : MonoBehaviour
 				
 			
 				// Rotating around character
-				cameraXform.RotateAround(characterOffset, followXform.up, freeRotationDegreePerSecond * (Mathf.Abs(rightX) > rightStickThreshold ? rightX + 5 : 0f));
+				cameraXform.RotateAround(characterOffset, followXform.up, freeRotationDegreePerSecond * (Mathf.Abs(rightX) > rightStickThreshold ? rightX + 2 : 0f));
 								
 				// Still need to track camera behind player even if they aren't using the right stick; achieve this by saving distanceAwayFree every frame
 				if (targetPosition == Vector3.zero)

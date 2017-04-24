@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
     public UIPanel mainui, gameui;
-	
+    public UILabel levelLabel;
 	public void StartMe ()
     {
         
@@ -14,5 +14,10 @@ public class GameStart : MonoBehaviour
 
         FindObjectOfType<CBL>().begin();
 
+    }
+
+    void Update()
+    {
+        if (levelLabel) levelLabel.text = "Level " + FindObjectOfType<CBL>().Level;
     }
 }
