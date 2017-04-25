@@ -45,7 +45,7 @@ public class CBL : MonoBehaviour
                 GetComponent<BoxCollider>().isTrigger = true;
             }
             A:
-            float pos = UnityEngine.Random.Range(-(radius - 10), (radius - 10));
+            float pos = UnityEngine.Random.Range(-(radius - 60), (radius - 60));
             Vector3 spawnpos = transform.position;
             RaycastHit hit;
             if (Physics.Raycast(new Vector3(transform.position.x + pos, transform.position.y + 2.9f, transform.position.z + pos), -Vector3.up, out hit))
