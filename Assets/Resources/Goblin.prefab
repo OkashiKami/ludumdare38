@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 54664841088647894}
   - component: {fileID: 114023097637213272}
   - component: {fileID: 82619856773475066}
+  - component: {fileID: 136349010143216474}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Untagged
@@ -1236,7 +1237,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297929795074326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.2065773, y: 3.8482666e-17, z: -17.33105}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4636160077501380}
@@ -2190,8 +2191,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   collection:
     source: {fileID: 0}
-    footstep: {fileID: 0}
-    attack: {fileID: 0}
+    footstep: {fileID: 8300000, guid: 94dbd4febab734210a43c84263f5e116, type: 3}
+    attack: {fileID: 8300000, guid: 3ca121c001790493aac9f6aec90cfc06, type: 3}
 --- !u!135 &135279034348632338
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -2199,11 +2200,24 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297929795074326}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 7.49
+  m_Radius: 60
   m_Center: {x: 0, y: 7.39, z: 0.39}
+--- !u!136 &136349010143216474
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297929795074326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.52
+  m_Height: 15
+  m_Direction: 1
+  m_Center: {x: 0, y: 7.2, z: 0}
 --- !u!137 &137024678154025160
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

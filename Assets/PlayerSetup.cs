@@ -9,6 +9,8 @@ public class PlayerSetup : MonoBehaviour
 	// Use this for initialization
 	public void StartMe ()
     {
+        if (!SpawnLocation) SpawnLocation = GameObject.Find("Start-Point").transform;
+
         try { cam = FindObjectOfType<ThirdPersonCamera>().transform.parent.gameObject; } catch { }
         if (!cam) cam = (GameObject)Instantiate(Resources.Load("CameraRig"), transform.position, Quaternion.identity);
         try { player = FindObjectOfType<CharacterControllerLogic>().gameObject; } catch { }
@@ -27,6 +29,6 @@ public class PlayerSetup : MonoBehaviour
         cam.name = "Camera Rig";
         player.name = "Player";
         player.GetComponent<StatSystem>().setHealth(100);
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
 	}
 }

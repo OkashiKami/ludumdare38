@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 public class CBL : MonoBehaviour
 {
     public static CBL inst;
     public bool active;
-    public CollectionBin bin;
+    internal CollectionBin bin;
     public int Score = 0;
     public int Level = 1;
-    public float radius = 40;
+    public float radius = 20;
     
 
     void Start () {
@@ -45,7 +48,7 @@ public class CBL : MonoBehaviour
             float pos = UnityEngine.Random.Range(-radius, radius);
             Vector3 spawnpos = transform.position;
             RaycastHit hit;
-            if (Physics.Raycast(new Vector3(spawnpos.x + pos, spawnpos.y + 2.9f, spawnpos.z + pos), -Vector3.up, out hit))
+            if (Physics.Raycast(new Vector3(transform.position.x + pos, transform.position.y + 2.9f, transform.position.z + pos), -Vector3.up, out hit))
             {
                 spawnpos = hit.point + new Vector3(0, 0.5f, 0);
             }
@@ -93,3 +96,26 @@ public class CBL : MonoBehaviour
         }
     }
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(CBL))]
+public class CBLEditor: Editor
+{
+    public override void OnInspectorGUI()
+    {
+        CBL tar = (CBL)target;
+        foreach(Transform t in tar.GetComponentsInChildren<Transform>())
+        {
+            if (t != tar.transform)
+                t.localPosition = Vector3.zero;
+        }
+       foreach(BoxCollider bc in tar.GetComponentsInChildren<BoxCollider>())
+        {
+            bc.size = new Vector3(tar.radius, 5, tar.radius);
+            bc.center = new Vector3(0, 2.5f, 0);
+            bc.isTrigger = true;
+        }
+        base.OnInspectorGUI();
+    }
+}
+#endif

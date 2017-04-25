@@ -10,9 +10,6 @@ public class CollectionBin : MonoBehaviour
     private int wantkeys = 3;
     public int present;
     private int wantpresent = 1;
-
-    public float radius =16 ;
-
     public void AddKey(Key key)
     {
         if (key) keys += 1;
@@ -25,11 +22,11 @@ public class CollectionBin : MonoBehaviour
             if (GetComponent<BoxCollider>())
             {
                 GetComponent<BoxCollider>().center = new Vector3(0, 2.5f, 0);
-                GetComponent<BoxCollider>().size = new Vector3(radius, 5, radius);
+                GetComponent<BoxCollider>().size = new Vector3(FindObjectOfType<CBL>().radius, 5, FindObjectOfType<CBL>().radius);
                 GetComponent<BoxCollider>().isTrigger = true;
             }
             A:
-            float pos = UnityEngine.Random.Range(-radius, radius);
+            float pos = UnityEngine.Random.Range(-FindObjectOfType<CBL>().radius, FindObjectOfType<CBL>().radius);
             Vector3 spawnpos = transform.position;
             RaycastHit hit;
             if (Physics.Raycast(new Vector3(spawnpos.x + pos, spawnpos.y + 16, spawnpos.z + pos), -Vector3.up, out hit))

@@ -35,14 +35,33 @@ public class MobControl : MonoBehaviour
             collection.source.clip = collection.footstep;
         collection.source.Play();
     }
-
-	// Update is called once per frame
-	void Update ()
+    public void AttackSound()
     {
-        
-        if (FindObjectOfType<CharacterControllerLogic>())
-            player = FindObjectOfType<CharacterControllerLogic>();
-        else return;
+        if (collection.attack)
+            collection.source.clip = collection.attack;
+        collection.source.Play();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+            player = other.GetComponent<CharacterControllerLogic>();
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+            StartCoroutine(LostPlayer());
+    }
+
+    private IEnumerator LostPlayer()
+    {
+        yield return new WaitForSeconds(3f);
+        player = null;
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
         if (!player) return;
         if (player.GetComponent<StatSystem>().Health <= 0)
         {
@@ -58,7 +77,7 @@ public class MobControl : MonoBehaviour
             {
                 if(ray.collider.GetComponent<MobControl>())
                 {
-                    transform.Translate(Vector3.right * 1);
+                    transform.Translate(Vector3.right * UnityEngine.Random.Range(-3, 3));
                 }
             }
             if (Vector3.Distance(transform.position, player.transform.position) > 2.5f)

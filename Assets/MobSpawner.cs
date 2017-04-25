@@ -10,7 +10,6 @@ public class MobSpawner : MonoBehaviour
     public MobType mob;
     public int MaxMobCount = 0, MobCount = 0;
     public bool CanCreate = false;
-    float radius = 55;
     public void StartMe()
     {
         if (!inst) { inst = this; DontDestroyOnLoad(this.gameObject); }
@@ -40,11 +39,11 @@ public class MobSpawner : MonoBehaviour
                 if (GetComponent<BoxCollider>())
                 {
                     GetComponent<BoxCollider>().center = new Vector3(0, 2.5f, 0);
-                    GetComponent<BoxCollider>().size = new Vector3(radius, 5, radius);
+                    GetComponent<BoxCollider>().size = new Vector3(FindObjectOfType<CBL>().radius, 5, FindObjectOfType<CBL>().radius);
                     GetComponent<BoxCollider>().isTrigger = true;
                 }
                 A:
-                float pos = UnityEngine.Random.Range(-radius, radius);
+                float pos = UnityEngine.Random.Range(-FindObjectOfType<CBL>().radius, FindObjectOfType<CBL>().radius);
                 Vector3 spawnpos = transform.position;
                 RaycastHit hit;
                 if (Physics.Raycast(new Vector3(spawnpos.x + pos, spawnpos.y + 2.9f, spawnpos.z + pos), -Vector3.up, out hit))

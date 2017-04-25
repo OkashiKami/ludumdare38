@@ -8,6 +8,10 @@ public class TP : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            foreach(MobControl mob in FindObjectsOfType<MobControl>())
+            {
+                Destroy(mob.gameObject);
+            }
             other.transform.position = transform.position;
             other.GetComponent<CharacterControllerLogic>().Active = false;
             other.gameObject.GetComponent<Animator>().SetFloat("Speed", 0);
